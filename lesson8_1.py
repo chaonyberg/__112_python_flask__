@@ -34,3 +34,10 @@ mask_dataFrame = df2[mask]
 mask_dataFrame.to_csv("可借小於3的站點.cvs")
 filename = f'可借小於{min}的站點.xlsx'
 mask_dataFrame.to_excel(filename)
+
+
+mask = dataFrame['sbi'] <= 3
+mask_dataFrame = dataFrame[mask]
+print(dataFrame[mask])
+
+st.dataFrame(mask_dataFrame)
