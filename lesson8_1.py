@@ -26,5 +26,11 @@ df2 = dataFrame.rename(columns={'sno':"編號",
 
 
 
-mask = dataFrame['sbi'] <= 3
-print(dataFrame[mask])
+#mask = dataFrame['sbi'] <= 3
+#print(dataFrame[mask])
+min = int(input('請輸入要查詢的可借數量:'))
+mask = df2['可借2'] <= min
+mask_dataFrame = df2[mask]
+mask_dataFrame.to_csv("可借小於3的站點.cvs")
+filename = f'可借小於{min}的站點.xlsx'
+mask_dataFrame.to_excel(filename)
